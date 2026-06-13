@@ -13,6 +13,7 @@ config_version=5
 config/name="ChatApp"
 run/main_scene="uid://c0eyxlk6kvc1u"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/image="uid://dsenhaffpu0u8"
 config/icon="res://icon.svg"
 
 [autoload]

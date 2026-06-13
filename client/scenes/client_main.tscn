@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b3gdw0oou7bo0" path="res://client/scripts/client_main.gd" id="1_xh82j"]
 [ext_resource type="Script" uid="uid://brn3ii6iulg5j" path="res://client/scripts/room_ui.gd" id="2_2jffr"]
+[ext_resource type="Texture2D" uid="uid://dsenhaffpu0u8" path="res://client/ColezyDevLogo.png" id="2_i2ki5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xh82j"]
 bg_color = Color(0.11119685, 0.11119685, 0.11119678, 1)
@@ -35,6 +36,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 
+[node name="ColezyDevLogo" type="Sprite2D" parent="Interface/TryingToConnect" unique_id=1353261729]
+position = Vector2(577.99994, 322.99997)
+scale = Vector2(1.1002041, 0.6101333)
+texture = ExtResource("2_i2ki5")
+
 [node name="Label" type="Label" parent="Interface/TryingToConnect" unique_id=605275880]
 layout_mode = 0
 offset_right = 40.0
@@ -43,6 +49,7 @@ theme_override_font_sizes/font_size = 56
 text = "TRYING TO CONNECT..."
 
 [node name="StartMenu" type="Control" parent="Interface" unique_id=1757854381]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,6 +65,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.15487596, 0.154876, 0.15487596, 1)
+
+[node name="ColezyDevLogo" type="Sprite2D" parent="Interface/StartMenu" unique_id=183344644]
+position = Vector2(581, 310.99997)
+scale = Vector2(0.783, 0.57900006)
+texture = ExtResource("2_i2ki5")
 
 [node name="ConnectButton" type="Button" parent="Interface/StartMenu" unique_id=1244854184]
 layout_mode = 1
@@ -148,6 +160,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.15487596, 0.154876, 0.15487596, 1)
 
+[node name="ColezyDevLogo" type="Sprite2D" parent="Interface/Room" unique_id=1795081488]
+position = Vector2(834, 310.99997)
+scale = Vector2(0.584, 0.57900006)
+texture = ExtResource("2_i2ki5")
+
 [node name="MessagesText" type="RichTextLabel" parent="Interface/Room" unique_id=393799968]
 layout_mode = 0
 offset_right = 525.0
@@ -155,6 +172,11 @@ offset_bottom = 594.0
 theme_override_font_sizes/normal_font_size = 33
 theme_override_styles/normal = SubResource("StyleBoxFlat_xh82j")
 theme_override_styles/focus = SubResource("StyleBoxFlat_xh82j")
+
+[node name="ColezyDevLogo" type="Sprite2D" parent="Interface/Room/MessagesText" unique_id=300333511]
+position = Vector2(262.49994, 292.25)
+scale = Vector2(0.48700017, 0.5635)
+texture = ExtResource("2_i2ki5")
 
 [node name="UserList" type="RichTextLabel" parent="Interface/Room" unique_id=33625983]
 layout_mode = 0
