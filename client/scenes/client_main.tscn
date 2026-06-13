@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://cjcl4r4ovma83"]
+
+[ext_resource type="Script" uid="uid://b3gdw0oou7bo0" path="res://client/scripts/client_main.gd" id="1_xh82j"]
+[ext_resource type="Script" uid="uid://brn3ii6iulg5j" path="res://client/scripts/room_ui.gd" id="2_2jffr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xh82j"]
+bg_color = Color(0.11119685, 0.11119685, 0.11119678, 1)
+
+[node name="ClientMain" type="Node" unique_id=220207056 node_paths=PackedStringArray("connecting_screen", "start_menu", "room_screen", "nickname_input", "ip_input", "password_input", "connect_button")]
+script = ExtResource("1_xh82j")
+connecting_screen = NodePath("Interface/TryingToConnect")
+start_menu = NodePath("Interface/StartMenu")
+room_screen = NodePath("Interface/Room")
+nickname_input = NodePath("Interface/StartMenu/LineEdit")
+ip_input = NodePath("Interface/StartMenu/IPBox")
+password_input = NodePath("Interface/StartMenu/PasswordBox")
+connect_button = NodePath("Interface/StartMenu/ConnectButton")
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1356150341]
+
+[node name="TryingToConnect" type="Control" parent="Interface" unique_id=1619629236]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Interface/TryingToConnect" unique_id=1767591743]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+
+[node name="Label" type="Label" parent="Interface/TryingToConnect" unique_id=605275880]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 56
+text = "TRYING TO CONNECT..."
+
+[node name="StartMenu" type="Control" parent="Interface" unique_id=1757854381]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Interface/StartMenu" unique_id=1624999671]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15487596, 0.154876, 0.15487596, 1)
+
+[node name="ConnectButton" type="Button" parent="Interface/StartMenu" unique_id=1244854184]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -86.0
+offset_right = 124.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 56
+text = "connect"
+
+[node name="LineEdit" type="LineEdit" parent="Interface/StartMenu" unique_id=1045102335]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -220.9
+offset_right = 204.0
+offset_bottom = -130.8999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 59
+placeholder_text = "Display Name"
+alignment = 1
+
+[node name="IPBox" type="LineEdit" parent="Interface/StartMenu" unique_id=1679046000]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -114.0
+offset_right = 232.0
+offset_bottom = -23.999939
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 59
+placeholder_text = "Server Address"
+alignment = 1
+
+[node name="PasswordBox" type="LineEdit" parent="Interface/StartMenu" unique_id=1091518763]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = 6.0
+offset_right = 232.0
+offset_bottom = 96.00006
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 59
+placeholder_text = "Password"
+alignment = 1
+
+[node name="Room" type="Control" parent="Interface" unique_id=1896852988 node_paths=PackedStringArray("send_message_button", "message_box", "messages_text", "user_list_text")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_2jffr")
+send_message_button = NodePath("SendMessageButton")
+message_box = NodePath("MessageBox")
+messages_text = NodePath("MessagesText")
+user_list_text = NodePath("UserList")
+
+[node name="ColorRect" type="ColorRect" parent="Interface/Room" unique_id=1523336438]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15487596, 0.154876, 0.15487596, 1)
+
+[node name="MessagesText" type="RichTextLabel" parent="Interface/Room" unique_id=393799968]
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 594.0
+theme_override_font_sizes/normal_font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_xh82j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xh82j")
+
+[node name="UserList" type="RichTextLabel" parent="Interface/Room" unique_id=33625983]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 4.0
+offset_right = 1149.0
+offset_bottom = 321.0
+theme_override_font_sizes/normal_font_size = 33
+horizontal_alignment = 2
+
+[node name="MessageBox" type="LineEdit" parent="Interface/Room" unique_id=40811131]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -51.0
+offset_right = 449.0
+grow_vertical = 0
+placeholder_text = "Enter a message..."
+
+[node name="SendMessageButton" type="Button" parent="Interface/Room" unique_id=1116988002]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 597.0
+offset_right = 524.0
+offset_bottom = 652.0
+theme_override_font_sizes/font_size = 34
+text = ">"
